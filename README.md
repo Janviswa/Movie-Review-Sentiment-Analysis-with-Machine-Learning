@@ -4,11 +4,14 @@ This project is part of a 6-week AICTE internship focused on Sentiment Analysis.
 
 ## Features
 
-- **Data Preprocessing**: Clean and prepare textual data by removing noise and tokenizing.
-- **Exploratory Data Analysis (EDA)**: Analyze word frequency, sentiment distribution, and feature correlations.
-- **Machine Learning Models**: Implement classifiers such as Random Forest, Naive Bayes, and Deep Learning models.
-- **Evaluation Metrics**: Assess model performance using accuracy, precision, recall, F1-score, and confusion matrix.
-- **Visualization**: Display classification results and model insights with charts and graphs.
+- **Data Preprocessing**: Cleans text data, removes special characters, and converts text to lowercase.
+- **Sentiment Labeling**: Classifies reviews based on IMDB ratings (>= 7 as positive, < 7 as negative).
+- **Feature Extraction**: Uses TF-IDF vectorization for text representation.
+- **Handling Imbalanced Data**: Utilizes SMOTE for oversampling minority classes when needed.
+- **Machine Learning Model**: Implements a Random Forest classifier for sentiment prediction.
+- **Model Evaluation**: Analyzes performance using accuracy, classification reports, and confusion matrices.
+- **Visualization**: Generates word clouds and displays data distributions.
+- **Model Persistence**: Saves trained models and vectorizers for future inference.
 
 ## Table of Contents
 
@@ -20,11 +23,11 @@ This project is part of a 6-week AICTE internship focused on Sentiment Analysis.
 - [Models](#models)
 - [Results](#results)
 - [Contributing](#contributing)
-- [Contact Information](#contact-information)
+- [Contact](#contact)
 
 ## Getting Started
 
-Follow the instructions below to set up the project and run sentiment analysis models on your system.
+Follow the instructions below to set up the project and run the models on your system.
 
 ### Prerequisites
 
@@ -34,21 +37,18 @@ Follow the instructions below to set up the project and run sentiment analysis m
 ### Installation
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/your-username/sentiment-analysis.git
    cd sentiment-analysis
    ```
 
 2. Create a virtual environment:
-
    ```bash
    python -m venv env
    source env/bin/activate   # On Windows: env\Scripts\activate
    ```
 
 3. Install the required dependencies:
-
    ```bash
    pip install -r requirements.txt
    ```
@@ -57,45 +57,39 @@ Follow the instructions below to set up the project and run sentiment analysis m
 
 1. Prepare your dataset by placing it in the `data/` directory. Ensure it matches the expected format.
 2. Run the preprocessing script:
-
    ```bash
    python preprocess.py
    ```
-
-3. Train the machine learning models:
-
+3. Train the machine learning model:
    ```bash
    python train.py
    ```
-
-4. Evaluate the models and visualize results:
-
+4. Evaluate the model and visualize results:
    ```bash
    python evaluate.py
    ```
-
 5. Generate predictions for new data:
-
    ```bash
    python predict.py --input new_data.csv
    ```
 
 ## Dataset
 
-Supported dataset:
+The dataset used is the **IMDB Top 1000 Movies Dataset**, containing movie reviews and ratings. The dataset includes:
 
-- **IMDB Reviews**: Sentiment-labeled dataset for movie reviews analysis.
+- **Overview**: Movie descriptions used as review texts.
+- **IMDB Rating**: Used to classify sentiment labels.
 
 ## Models
 
-This project supports various machine learning models, including but not limited to:
+This project supports various machine learning models, including:
 
-- Logistic Regression
-- Random Forest
+- Random Forest Classifier
+- Decision Trees
 - Support Vector Machines (SVM)
-- Neural Networks
+- Gradient Boosting (XGBoost, LightGBM)
 
-Hyperparameter tuning and optimization are included to enhance accuracy.
+Hyperparameter tuning and model optimization are included to enhance accuracy.
 
 ## Results
 
@@ -105,9 +99,9 @@ Evaluation metrics used to assess model performance:
 - Precision
 - Recall
 - F1-score
-- Confusion Matrix
+- AUC-ROC
 
-Visualization tools display sentiment trends and model evaluation.
+Visualization tools display confusion matrices, word clouds, and feature importance for better interpretation.
 
 ## Contributing
 
@@ -115,26 +109,19 @@ Contributions are welcome! To contribute:
 
 1. Fork the repository.
 2. Create a new branch:
-
    ```bash
    git checkout -b feature-name
    ```
-
 3. Make your changes and commit:
-
    ```bash
    git commit -m "Description of changes"
    ```
-
 4. Push to the branch:
-
    ```bash
    git push origin feature-name
    ```
-
 5. Create a pull request.
 
-## Contact Information
+## Contact
 
 For questions, feedback, or contributions, please contact Janani at jananiviswa05@gmail.com.
-
