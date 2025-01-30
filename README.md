@@ -1,4 +1,4 @@
-# Movie Review Sentiment Analysis with Machine Learning - AICTE Internship Project
+# Movie Review Sentiment Analysis with ML - AICTE Internship Project
 
 This project is part of a 6-week AICTE internship focused on Sentiment Analysis. The goal is to develop a machine learning model that classifies movie reviews as either positive or negative based on textual data.
 
